@@ -2,9 +2,8 @@
   "extends": "stylelint-config-standard",
   "rules": {
     "indentation": 2,
-    "color-hex-length": null,       
-    "alpha-value-notation": null,    
-    "color-function-notation": null, 
-    "font-family-name-quotes": null 
+    "declaration-block-no-shorthand-property-overrides": null,
+    "color-function-notation": "modern",
+    "alpha-value-notation": "number"
   }
 }
