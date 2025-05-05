@@ -14,7 +14,7 @@ function revealSecret() {
         text-align: center;
         margin: 25px 0;
         font-size: 1.3rem;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        textShadow: '1px 1px 2px rgba(0,0,0,0.7)';
         animation: fadeIn 1.5s ease;
     `;
     

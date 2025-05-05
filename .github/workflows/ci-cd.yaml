@@ -32,8 +32,9 @@ jobs:
 
     # Шаг 4: Линтинг JavaScript 
     - name: Lint JS
-      run: npm install -g eslint
-    - run: eslint "script.js" --fix-dry-run 
+      run: |
+        npm install -g eslint
+        eslint script.js --fix-dry-run --config eslint.config.js
 
     # Шаг 5: Запуск Python тестов
     - name: Setup Python
