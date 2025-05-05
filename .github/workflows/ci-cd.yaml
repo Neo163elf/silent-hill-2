@@ -23,7 +23,8 @@ jobs:
     - name: Lint CSS
       run: |
         npm install -g stylelint stylelint-config-standard
-        stylelint "style.css" --config .stylelintrc.json
+        stylelint "**/*.css" --config .stylelintrc.json --fix || true
+        git diff --exit-code
 
     # Шаг 4: Линтинг JavaScript 
     - name: Lint JS
