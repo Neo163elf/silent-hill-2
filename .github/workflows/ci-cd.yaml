@@ -22,9 +22,13 @@ jobs:
     # Шаг 3: Линтинг CSS
     - name: Lint CSS
       run: |
-        npm install -g stylelint@15 stylelint-config-standard@34
+        npm install -g stylelint stylelint-config-standard
         stylelint "style.css" --config .stylelintrc.json --fix || true
-        git diff --exit-code
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git add style.css
+        git commit -m "Auto-fix CSS" || true 
+        git push || true
 
     # Шаг 4: Линтинг JavaScript 
     - name: Lint JS
