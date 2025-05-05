@@ -21,8 +21,9 @@ jobs:
 
     # Шаг 3: Линтинг CSS
     - name: Lint CSS
-      run: npm install -g stylelint stylelint-config-standard
-    - run: stylelint "style.css"
+      run: |
+        npm install -g stylelint stylelint-config-standard
+        stylelint "**/*.css" --config .stylelintrc.json
 
     # Шаг 4: Линтинг JavaScript 
     - name: Lint JS
