@@ -22,7 +22,7 @@ jobs:
     # Шаг 3: Линтинг CSS
     - name: Lint CSS
       run: |
-        npm install -g stylelint stylelint-config-standard
+        npm install -g stylelint stylelint-config-standard stylelint-indentation
         stylelint "style.css" --config .stylelintrc.json --fix
         git diff --exit-code
 
