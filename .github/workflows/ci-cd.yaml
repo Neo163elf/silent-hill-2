@@ -17,16 +17,16 @@ jobs:
       with:
         node-version: 20
     - run: npm install -g htmlhint
-    - run: htmlhint "src/index.html"  
+    - run: htmlhint "docs/index.html"  
 
     # Шаг 3: Линтинг CSS
     - name: Lint CSS
       run: |
         npm install -g stylelint stylelint-config-standard
-        stylelint "src/style.css" --config .stylelintrc.json --fix || true
+        stylelint "docs/style.css" --config .stylelintrc.json --fix || true
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
-        git add src/style.css
+        git add docs/style.css
         git commit -m "Auto-fix CSS" || true 
         git push || true
 
@@ -34,7 +34,7 @@ jobs:
     - name: Lint JS
       run: |
         npm install -g eslint
-        eslint src/script.js --fix-dry-run --config eslint.config.js
+        eslint docs/script.js --fix-dry-run --config eslint.config.js
 
     # Шаг 5: Запуск Python тестов
     - name: Setup Python
